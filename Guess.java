@@ -35,7 +35,7 @@ public class Guess
 			  if((response.charAt(0) == 'y') || (response.charAt(0) == 'Y'))
 			  {
 				  win = true;
-				  System.out.println("YEA! I Win...  Play Again?");
+				  System.out.println("I guessed correctly, do you want to Play Again?");
 				  response = s.nextLine();
 				  if((response.charAt(0) == 'y') || (response.charAt(0) == 'Y'))
 				  {
@@ -49,10 +49,10 @@ public class Guess
 			  else
 			  {
 				  //add new animal
-				  System.out.println("Dang, Thought I had it.  What was your animal?");
+				  System.out.println("I guess wrongly, What was your animal?");
 				  String newAnimalName = s.nextLine();  // stores new animal
                   Node newAnimal = new Node(newAnimalName);  //makes node for it
-				  //ALL THE REAL WORK				  
+								  
 				  System.out.println("What is a QUESTION that seperates a " + response + " from a " + a.question + "? ");
 				  response = s.nextLine();
 				 
@@ -99,8 +99,8 @@ public class Guess
 			  }			  
 		  }
 	  }
-	  System.out.println("OK - Be that way.  Bye.");
-	  deleteFile();   //make this one yourself
+	  System.out.println("Ok thanks for playing.");
+	  deleteFile();   
 	  export(t.root,1);
 	  s.close();
   }
@@ -110,7 +110,7 @@ public class Guess
   		String line;
         String[] data = new String[10000];  // make an array that can hold up to 10000 values
 
-        try {   // uses old code as base
+        try {  
             FileReader fr = new FileReader(filename);
             BufferedReader br = new BufferedReader(fr);
             
@@ -203,3 +203,4 @@ public class Guess
         }
     }
 }
+
